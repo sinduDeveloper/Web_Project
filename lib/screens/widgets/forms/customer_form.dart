@@ -41,7 +41,20 @@ class CustomerForm extends StatelessWidget {
               onPressed: () {},
               child: const Text('Submit'),
             ),
-          ),         
+          ),
+          SizedBox(
+            width: 250,
+            child: TextField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  labelText: "Search",
+                  suffixIcon: Icon(Icons.search)),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           const CustomerListingBlock(),
           const SizedBox(
             height: 20,

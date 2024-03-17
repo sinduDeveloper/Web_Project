@@ -105,48 +105,58 @@ class _HomeScreenState extends State<HomeScreen> {
                                     .toList(),
                               ),
                               Expanded(
-                                child: Column(
-                                  children: [
-                                    for (var heading in mainHeading)
-                                      _expanded[heading] == true
-                                          ? Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height / 1.2,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        for (var heading in mainHeading)
+                                          _expanded[heading] == true
+                                              ? Container(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
                                                       vertical: 8,
                                                       horizontal: 16),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: topicData[heading]!
-                                                    .map((e) => Flexible(
-                                                      child: GestureDetector(
-                                                            child: Card(
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                        .all(5.0),
-                                                                child: Text(e),
-                                                              ),
-                                                            ),
-                                                            onTap: () {
-                                                              setState(() {
-                                                                selectedForm
-                                                                        .value =
-                                                                    formsList[e]!;
-                                                                routeHistory.add(
-                                                                    selectedForm
-                                                                        .value);
-                                                              });
-                                                            },
-                                                          ),
-                                                    ))
-                                                    .toList(),
-                                              ),
-                                            )
-                                          : const SizedBox(),
-                                    cardWidget(),
-                                  ],
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children:
+                                                        topicData[heading]!
+                                                            .map(
+                                                                (e) => Flexible(
+                                                                      child:
+                                                                          GestureDetector(
+                                                                        child:
+                                                                            Card(
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.all(5.0),
+                                                                            child:
+                                                                                Text(e),
+                                                                          ),
+                                                                        ),
+                                                                        onTap:
+                                                                            () {
+                                                                          setState(
+                                                                              () {
+                                                                            selectedForm.value =
+                                                                                formsList[e]!;
+                                                                            routeHistory.add(selectedForm.value);
+                                                                          });
+                                                                        },
+                                                                      ),
+                                                                    ))
+                                                            .toList(),
+                                                  ),
+                                                )
+                                              : const SizedBox(),
+                                        cardWidget(),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                               const SizedBox(

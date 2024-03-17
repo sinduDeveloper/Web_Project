@@ -15,6 +15,12 @@ class CustomerListingBlock extends StatelessWidget {
         const Divider(),
         customerDetailsRow("Hello", "Customer Business name2",
             "test2@gmail.com", "1122334455"),
+        const Divider(),
+        customerDetailsRow("Hello", "Customer Business name2",
+            "test2@gmail.com", "1122334455"),
+        const Divider(),
+        customerDetailsRow("Hello", "Customer Business name2",
+            "test2@gmail.com", "1122334455"),
       ],
     );
   }
@@ -25,7 +31,7 @@ customerDetailsRow(String text1, String text2, String text3, String text4) {
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       const SizedBox(
-        width: 10,
+        width: 30,
       ),
       const Icon(Icons.edit_square),
       const SizedBox(
